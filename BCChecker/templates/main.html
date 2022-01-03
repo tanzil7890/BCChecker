@@ -1,0 +1,32 @@
+{% extends 'header.html' %}
+
+{% block body %}
+
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>Welcome to BCChecker</h1>
+                <p class="lead">BCChecker is a tool created by Mohammad Tanzil Idrisi available for medical oncologists, professionals, and medical, aiming to reduce the amount of false positives, false negatives and overdiagnoses after mammograms. With BCChecker, you guarantee yourself another layer of certainity. Simply enter patient/lesion data below to receive a result (benignancy or malignancy)</p>
+                
+                    <legend>Legend</legend>
+                <p>Shape: 1 for round, 2 for oval, 3 for lobular, 4 for irregular</p>
+                <p>Mass margin: 1 for circumscribed, 2 for microlobulated, 3 for obscured,  for ill-defined, 5 for spiculated</p>
+                <p>Density: 1 for high, 2 for iso, 3 for low, 4 for fat-containing</p>
+
+                          <form method="POST" action="/predict/">
+
+  <p><input type="text" name="birads" class="form-control" placeholder="Enter BIRADS category"></p>
+  <P><input type="text" name="age" class="form-control" placeholder="Enter age"></P>
+<p><input type="text" name="shape" class="form-control" placeholder="Enter shape"></p>
+<p><input type="text" name="margin" class="form-control" placeholder="Enter mass margin"></p>
+                    <p><input type="text" name="density" class="form-control" placeholder="Enter mass density"></p>
+                    
+                    <input type="submit" class="btn btn-info" value="Predict!">
+
+</form>
+
+
+            </div>
+        </div>
+        <!-- /.row -->
+{% endblock %}
